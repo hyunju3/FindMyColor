@@ -37,6 +37,8 @@ public class Enemy : MonoBehaviour
 
     public Animator anim;
 
+    public GameManager gmManager;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -203,55 +205,113 @@ public class Enemy : MonoBehaviour
 
     IEnumerator OnDamage(Vector3 reactVec, bool isGrenade = false)
     {
-        foreach (MeshRenderer mesh in meshs)
-        {
-            mesh.material.color = Color.red; 
-        }
-        yield return new WaitForSeconds(0.1f);
-
-        if(curHealth >0)
+        if (enumyType != Type.D)
         {
             foreach (MeshRenderer mesh in meshs)
             {
-                mesh.material.color = Color.white;
+                mesh.material.color = Color.red;
             }
-        }
-        else
-        {
-            foreach (MeshRenderer mesh in meshs)
+            yield return new WaitForSeconds(0.1f);
+
+            if (curHealth > 0)
             {
-                mesh.material.color = Color.gray;
-            }
-            // Enemy Daed 값의 레이어로 변경해 준다
-            gameObject.layer = 14;
-            isDead = true;
-            isChase = false;
-            nav.enabled = false;
-            anim.SetTrigger("doDie");
-
-
-            // 죽었을때 넉빽을 넣기 위해
-            if (isGrenade)
-            {
-                reactVec = reactVec.normalized;
-                reactVec += Vector3.up * 10;
-
-                // 회전값고정을 풀어준다
-                rigid.freezeRotation = false;
-                rigid.AddForce(reactVec, ForceMode.Impulse);
-                // 죽은 적에 회전 값을 준다
-                rigid.AddTorque(reactVec * 15, ForceMode.Impulse);  
+                foreach (MeshRenderer mesh in meshs)
+                {
+                    mesh.material.color = Color.white;
+                }
             }
             else
             {
-                reactVec = reactVec.normalized;
-                reactVec += Vector3.up * 5;
-                rigid.AddForce(reactVec, ForceMode.Impulse);
-            }
+                foreach (MeshRenderer mesh in meshs)
+                {
+                    mesh.material.color = Color.gray;
+                }
+                // Enemy Daed 값의 레이어로 변경해 준다
+                gameObject.layer = 14;
+                isDead = true;
+                isChase = false;
+                nav.enabled = false;
+                anim.SetTrigger("doDie");
 
-            if (enumyType != Type.D)
+
+                // 죽었을때 넉빽을 넣기 위해
+                if (isGrenade)
+                {
+                    reactVec = reactVec.normalized;
+                    reactVec += Vector3.up * 10;
+
+                    // 회전값고정을 풀어준다
+                    rigid.freezeRotation = false;
+                    rigid.AddForce(reactVec, ForceMode.Impulse);
+                    // 죽은 적에 회전 값을 준다
+                    rigid.AddTorque(reactVec * 15, ForceMode.Impulse);
+                }
+                else
+                {
+                    reactVec = reactVec.normalized;
+                    reactVec += Vector3.up * 5;
+                    rigid.AddForce(reactVec, ForceMode.Impulse);
+                }
+
+                if (enumyType != Type.D)
+                {
+                    Destroy(gameObject, 4f);
+                }
+            } 
+        }
+        else if (enumyType == Type.D)
+        {
+    
+            foreach (MeshRenderer mesh in meshs)
             {
-                Destroy(gameObject, 4f); 
+                mesh.material.color = Color.blue;
+            }
+            yield return new WaitForSeconds(0.1f);
+
+            if (curHealth > 0)
+            {
+                foreach (MeshRenderer mesh in meshs)
+                {
+                    mesh.material.color = Color.white;
+                }
+            }
+            else
+            {
+                foreach (MeshRenderer mesh in meshs)
+                {
+                    mesh.material.color = Color.gray;
+                }
+                // Enemy Daed 값의 레이어로 변경해 준다
+                gameObject.layer = 14;
+                isDead = true;
+                isChase = false;
+                nav.enabled = false;
+                anim.SetTrigger("doDie");
+
+
+                // 죽었을때 넉빽을 넣기 위해
+                if (isGrenade)
+                {
+                    reactVec = reactVec.normalized;
+                    reactVec += Vector3.up * 10;
+
+                    // 회전값고정을 풀어준다
+                    rigid.freezeRotation = false;
+                    rigid.AddForce(reactVec, ForceMode.Impulse);
+                    // 죽은 적에 회전 값을 준다
+                    rigid.AddTorque(reactVec * 15, ForceMode.Impulse);
+                }
+                else
+                {
+                    reactVec = reactVec.normalized;
+                    reactVec += Vector3.up * 5;
+                    rigid.AddForce(reactVec, ForceMode.Impulse);
+                }
+
+                if (enumyType != Type.D)
+                {
+                    Destroy(gameObject, 4f);
+                }
             }
         }
     }

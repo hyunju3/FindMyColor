@@ -44,9 +44,7 @@ public class GameManager : MonoBehaviour
     public Text enemyBTxt;
     public Text enemyCTxt;
 
-    public RectTransform bossHealthGroup;
-    public RectTransform bossHealthBar;
-
+    public HealthBar BossHealthBar;
 
     void Awake()
     {
@@ -103,6 +101,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void BossHpUI()
+    {
+        // 보스 체력 UI
+        BossHealthBar.UpdateHealth(boss.curHealth, boss.maxHealth);
+    }
+
     void LateUpdate()
     {
         // 상단 UI
@@ -141,11 +145,7 @@ public class GameManager : MonoBehaviour
         enemyCTxt.text = enemyCntC.ToString();
 
 
-        int bossHealth = boss.maxHealth/ boss.curHealth ;
         // 보스 체력 UI
-
-        bossHealthBar.localScale = new Vector3(boss.curHealth / boss.maxHealth, bossHealth, 1); 
-
-
+        BossHpUI();
     }
 }
