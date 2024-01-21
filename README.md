@@ -1,22 +1,23 @@
-![venom](https://capsule-render.vercel.app/api?type=venom&height=200&text=Find%20My%20Color.&fontSize=70&color=0:8871e5,100:b678c4&stroke=b678c4)
-
+![venom](https://capsule-render.vercel.app/api?type=venom&height=200&text=Find%20My%20Color.&fontSize=70&color=0:FFE359,200:EF3054&stroke=EF3054)
 
 
 > ## 목차
-1. [How to Use](#how-to-use)
-2. [Types](#types)
-3. [링크](#링크)
+1. [게임 기획](#게임-기획)
+2. [플레이어](#플레이어)
+3. [Npc](#npc)
+4. [몬스터](#몬스터)
+5. [완성](#완성)
+6. [게임 완성 후 후기](#게임-완성-후-후기)
 
-# How to Use
+# 게임 기획
 
-```
-https://capsule-render.vercel.app/api?
-```
-# Types
+# 플레이어
 
-# 링크
+# Npc
 
+# 몬스터
 
-Computer[^1]
+# 완성
 
-[^1]: 콤퓨타
+# 게임 완성 후 후기
+
