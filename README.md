@@ -44,7 +44,13 @@
 
 
 # Player
-
+  
+  <div style="flot:left;" width="300">
+    <img src="https://github.com/hyunju3/FindMyColor/assets/117258795/fe16ae3e-e0c8-4002-9eac-2862630b1a8a" width="300"/>
+  </div>
+  <div style="flot:rigth; display:inline-block;"  width="300" height="300">
+     이야기 적기
+  </div>
 
 # Npc
 
