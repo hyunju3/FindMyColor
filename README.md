@@ -45,6 +45,7 @@
 
 # Player
 
+
 # Npc
 
 > ## 몬스터
@@ -53,5 +54,12 @@
 
 # 완성
 
+
+![ambient_gradient][ambient_gradient]
+
 # 게임 완성 후 후기
 
+
+
+[ambient_gradient]: https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&hide=contribs,prs&cache_seconds=86400&theme=ambient_gradient
+[add-theme]: https://github.com/anuraghazra/github-readme-stats/edit/master/themes/index.js
