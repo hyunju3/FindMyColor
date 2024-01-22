@@ -36,6 +36,8 @@
   3. 맞는 색상이 들어올 경우입니다.<br/>
   3-1. 색상이 맞으면 npc는 상점 npc로 변합니다.<br/>
   3-2. 상점 npc는 고유 아이템과 hp 혹은 총알 중 선택해서 판매합니다.<br/><br/>
+
+  <b>[ 몬스터 ]</b><br/>
   
   <b>[클리어 방법]</b><br/>
    - npc에게 자기의 색상을 찾아주면 클리어입니다.
@@ -44,13 +46,9 @@
 
 
 # Player
+   <img src="https://github.com/hyunju3/FindMyColor/assets/117258795/fe16ae3e-e0c8-4002-9eac-2862630b1a8a" width="300"/>
   
-  <div style="flot:left;" width="300">
-    <img src="https://github.com/hyunju3/FindMyColor/assets/117258795/fe16ae3e-e0c8-4002-9eac-2862630b1a8a" width="300"/>
-  </div>
-  <div style="flot:rigth; display:inline-block;"  width="300" height="300">
-     이야기 적기
-  </div>
+         
 
 # Npc
 
